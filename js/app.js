@@ -18,34 +18,55 @@ var getMain = document.getElementById('main');
 
 for (var i=0; i<kingdoms.length; i++){
 	
+	var mainDiv = document.createElement('div');
+	mainDiv.className = 'main';
+	main.appendChild(mainDiv);
+
 	var crestImg = document.createElement('img');
 	crestImg.className = 'crest';
 	crestImg.src = kingdoms[i].crest;
-	main.appendChild(crestImg);
+	crestImg.alt = kingdoms[i].house;
+	mainDiv.appendChild(crestImg);
 
 	var houseDiv = document.createElement('div');
 	houseDiv.className = 'house';
 	houseDiv.innerHTML = kingdoms[i].house;
-	main.appendChild(houseDiv);
+	mainDiv.appendChild(houseDiv);
 
 	var regionDiv = document.createElement('div');
 	regionDiv.className = 'region';
 	regionDiv.innerHTML = 'Region: ' + kingdoms[i].region;
-	main.appendChild(regionDiv);
+	houseDiv.appendChild(regionDiv);
 
 	var lordDiv = document.createElement('div');
 	lordDiv.className = 'lord';
 	lordDiv.innerHTML = 'Lord: ' + kingdoms[i].lord;
-	main.appendChild(lordDiv);
+	regionDiv.appendChild(lordDiv);
 
 	var allegDiv = document.createElement('div');
 	allegDiv.className = 'alleg';
 	allegDiv.innerHTML = 'Sworn to ' + kingdoms[i].allegiance;
-	main.appendChild(allegDiv);
+	lordDiv.appendChild(allegDiv);
 
-	var wordDiv = document.createElement('div');
+ 	var wordDiv = document.createElement('div');
 	wordDiv.className = 'word';
 	wordDiv.innerHTML = '"' + kingdoms[i].words + '"';
-	main.appendChild(wordDiv);
+	allegDiv.appendChild(wordDiv);
 
 }
+
+var getCrest = document.getElementsByClassName('main');
+
+for (var i=0; i<getCrest.length; i++){
+	getCrest[i].addEventListener('click', showRegion);
+}
+
+function showRegion(){
+	var getHouse = this.querySelectorAll('.house')[0];
+	if (getHouse.style.display === 'none'){
+		getHouse.style.display = 'block';
+	}else{
+		getHouse.style.display = 'none';
+	}
+}
+

@@ -1,3 +1,44 @@
 body{
 	/*background-color: lightblue;*/
 }
+
+.crest{
+	background-color: black;
+	width: 140px;
+	height: 150px;
+	padding: 2%;
+	border-color: 3px solid gray;
+	margin: 1%;
+	margin-bottom: 30px;
+	float: left;
+	display: block;
+}
+
+.house{
+	background-color: orange;
+	width: 150px;
+	/*height: 300px;*/
+	display: 'none';
+	float: left;
+	/*margin-top: 200px;*/
+}
+
+.region{
+	background-color: aqua;
+	width: 150px;
+}
+
+.lord{
+	background-color: pink;
+	width: 150px;
+}
+
+.alleg{
+	background-color: lime;
+	width: 150px;
+}
+
+.word{
+	background-color: yellow;
+	width: 150px;
+}
